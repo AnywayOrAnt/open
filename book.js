@@ -1,4 +1,4 @@
-const BREAK = "■■■■■■■■";
+let BREAK = "■■■■■■■■";
 function text2arr(text){
     return text.trim().replace(/<br>/g, BREAK).replace(/</g, "&lt;").replace(/>/g, "&gt;").split("\n");
 }
