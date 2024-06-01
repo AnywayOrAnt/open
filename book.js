@@ -32,9 +32,12 @@ window.addEventListener("DOMContentLoaded", function (event) {
         q.textContent = h;
         p.insertBefore(q, e);
         p.removeChild(e);
-
+        q.classList.add("pre-wrap");
+        console.log(c);
         if(c == ""){
             q.classList.add("code");
+        } else {
+            q.className = c;
         }
     });
 });
