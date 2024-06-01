@@ -1,5 +1,5 @@
-if(!BREAK){
-    var BREAK = "■■■■■■■■";
+if(!window.BREAK){
+    window.BREAK = "■■■■■■■■";
 }
 function text2arr(text){
     return text.trim().replace(/<br>/g, BREAK).replace(/</g, "&lt;").replace(/>/g, "&gt;").split("\n");
