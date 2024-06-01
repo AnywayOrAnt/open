@@ -1,4 +1,6 @@
-let BREAK = "■■■■■■■■";
+if(!BREAK){
+    var BREAK = "■■■■■■■■";
+}
 function text2arr(text){
     return text.trim().replace(/<br>/g, BREAK).replace(/</g, "&lt;").replace(/>/g, "&gt;").split("\n");
 }
