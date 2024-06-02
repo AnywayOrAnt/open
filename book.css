@@ -66,7 +66,19 @@ div.code{
     margin: 0;
 }
 .col2{
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: max-content 1fr;
+}
+
+.col3{
+    grid-template-columns: max-content max-content 1fr;
+}
+
+.col4{
+    grid-template-columns: max-content max-content max-content 1fr;
+}
+
+.col5{
+    grid-template-columns: max-content max-content max-content max-content 1fr;
 }
 
 .pre-wrap{
