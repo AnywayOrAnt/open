@@ -67,7 +67,7 @@ div.code{
     border-bottom: 1px solid green;
     border-right: 1px solid green;
     margin: 0;
-    padding: 1px 3px;
+    padding: 1px 6px;
 }
 .col2{
     grid-template-columns: max-content 1fr;
