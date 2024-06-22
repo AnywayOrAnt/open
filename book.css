@@ -131,16 +131,6 @@ body>*:has(.no:first-child){
     border: none !important;
 }
 
-h7{
-    
-    display: grid;
-    grid-template-columns: max-content 1fr;
-}
-h7>*{
-    font-weight: bolder;
-    font-size: 110%;
-    padding: 1px 6px;
-}
 
 
 
