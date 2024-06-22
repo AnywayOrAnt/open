@@ -63,18 +63,39 @@ div.code{
     display: none;
 }
 
+.col2,
+.col3,
+.col4,
+.col5,
+.col6,
 .grid{
     width: 100%;
     display: grid;
     align-items: stretch;
     grid-template-rows: repeat(100, max-content);
 }
+
+.col2>*,
+.col3>*,
+.col4>*,
+.col5>*,
+.col6>*,
 .grid>*{
     border-bottom: 1px solid green;
     border-right: 1px solid green;
     margin: 0;
     padding: 1px 6px;
 }
+
+h1.col2>*,
+h2.col2>*,
+h3.col2>*,
+h4.col2>*,
+h5.col2>*,
+h6.col2>*{
+    border: none !important;
+}
+
 .col2{
     grid-template-columns: max-content 1fr;
 }
@@ -95,14 +116,32 @@ div.code{
     white-space: pre-wrap;
 }
 
-:has(.no:first-child){
+body>*:has(.no:first-child){
+    width: 100%;
     display: grid;
-    grid-template-columns: minmax(max-content, 6em)  1fr;
+    grid-template-columns: max-content 1fr;
+    /* grid-template-columns: 6em 1fr; */
 }
 
 .no:first-child{
     padding-right: 0.5em;
 }
+
+.border0>*{
+    border: none !important;
+}
+
+h7{
+    
+    display: grid;
+    grid-template-columns: max-content 1fr;
+}
+h7>*{
+    font-weight: bolder;
+    font-size: 110%;
+    padding: 1px 6px;
+}
+
 
 
 
