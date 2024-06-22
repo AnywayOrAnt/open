@@ -97,7 +97,7 @@ div.code{
 
 :has(.no:first-child){
     display: grid;
-    grid-template-columns: max-content 1fr;
+    grid-template-columns: minmax(max-content, 6em)  1fr;
 }
 
 .no:first-child{
