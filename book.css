@@ -12,6 +12,12 @@
     }
 }
 
+@Media (max-width:768px){
+    body{
+        word-break: break-all;
+    }
+}
+
 @Media (min-width:512px){
     body{
         font-size: 4vw;
