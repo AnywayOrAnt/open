@@ -95,7 +95,12 @@ div.code{
     white-space: pre-wrap;
 }
 
-h1:has(section), h2:has(section), h3:has(section), h4:has(section), h5:has(section), h6:has(section){
+h1:has(section), 
+h2:has(section), 
+h3:has(section), 
+h4:has(section), 
+h5:has(section), 
+h6:has(section){
     display: grid;
     grid-template-columns: max-content 1fr;
 }
