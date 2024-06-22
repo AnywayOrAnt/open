@@ -95,15 +95,13 @@ div.code{
     white-space: pre-wrap;
 }
 
-blockquote:has(.no:first-child),
-h1:has(.no:first-child), 
-h2:has(.no:first-child), 
-h3:has(.no:first-child), 
-h4:has(.no:first-child), 
-h5:has(.no:first-child), 
-h6:has(.no:first-child){
+:has(.no:first-child){
     display: grid;
     grid-template-columns: max-content 1fr;
+}
+
+.no:first-child{
+    padding-right: 0.5em;
 }
 
 
