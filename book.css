@@ -95,6 +95,7 @@ div.code{
     white-space: pre-wrap;
 }
 
+blockquote:has(section),
 h1:has(section), 
 h2:has(section), 
 h3:has(section), 
