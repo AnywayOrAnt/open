@@ -1,4 +1,8 @@
-.break-all{
+body{
+    font-size: 20px;
+}
+div.code,
+body>*>*{
     word-break: break-all;
 }
 
@@ -8,11 +12,11 @@
 
 @Media (max-width:512px){
     body{
-        font-size: 4.5vw;
+        /* font-size: 16px; */
     }
 }
 
-@Media (max-width:768px){
+@Media (max-width:1024px){
     body{
         word-break: break-all;
     }
@@ -20,13 +24,13 @@
 
 @Media (min-width:512px){
     body{
-        font-size: 4vw;
+        /* font-size: 4vw; */
     }
 }
 
 @Media (min-width:768px){
     body{
-        font-size: 2.5vw;
+        /* font-size: 2.5vw; */
     }
     .grid>*>br{
         display: none !important;
@@ -35,7 +39,7 @@
 
 @Media (min-width:1280px){
     body{
-        font-size: 1.5vw;
+        /* font-size: 1.5vw; */
     }
 }
 
@@ -57,7 +61,7 @@ div.code{
     font-family: 'Courier New', Courier, monospace;
     background-color: rgba(0, 255, 0, 0.2);
     padding: 0 8px;
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 *[hide]{
     display: none;
@@ -85,15 +89,6 @@ div.code{
     border-right: 1px solid green;
     margin: 0;
     padding: 1px 6px;
-}
-
-h1.col2>*,
-h2.col2>*,
-h3.col2>*,
-h4.col2>*,
-h5.col2>*,
-h6.col2>*{
-    border: none !important;
 }
 
 .col2{
@@ -130,6 +125,15 @@ body>*:has(.no:first-child){
 .border0>*{
     border: none !important;
 }
+
+[hcol2]{
+    display: grid;
+    grid-template-columns: max-content 1fr;
+}
+[hcol2]>*{
+    padding: 1px 6px;
+}
+
 
 
 

@@ -40,6 +40,21 @@ window.addEventListener("DOMContentLoaded", function (event) {
             q.classList.add("pre-wrap");
         }
     });
+
+    let h1 = document.querySelector("h1");
+    h1.addEventListener("click", function(){
+        let size = prompt("font size?")*1;
+        !size && (size = 20);
+        console.log(size);
+        document.body.style.fontSize = size + "px";
+    });
+
+    let info = document.createElement("h1");
+    document.body.insertBefore(info, h1);
+    info.innerHTML = [
+        window.innerWidth,
+        navigator.userAgent
+    ].join("<br>");
 });
 
 function makeData4table(){
@@ -108,7 +123,6 @@ function decodeAlphabets(string) {
     }
 
     string = string.toLowerCase().split("");
-    console.log(string);
 
     for(let i=0, len=string.length; i<len; i++){
         console.log(alpha[string[i]]);
