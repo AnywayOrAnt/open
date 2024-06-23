@@ -50,7 +50,7 @@ window.addEventListener("DOMContentLoaded", function (event) {
     });
 
     let info = document.createElement("h1");
-    document.body.insertBefore(info, h1);
+    h1.parentNode.insertBefore(info, h1);
     info.innerHTML = [
         window.innerWidth,
         navigator.userAgent
