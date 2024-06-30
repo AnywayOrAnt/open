@@ -63,7 +63,12 @@ div.code{
     padding: 0 8px;
     /* font-weight: bold; */
 }
-*[hide]{
+
+body>* + div{
+    margin-top: 0.35em;
+}
+
+.hide{
     display: none;
 }
 
@@ -118,21 +123,10 @@ body>*:has(.no:first-child){
     /* grid-template-columns: 6em 1fr; */
 }
 
-.no:first-child{
-    padding-right: 0.5em;
-}
-
 .border0>*{
     border: none !important;
 }
 
-[hcol2]{
-    display: grid;
-    grid-template-columns: max-content 1fr;
-}
-[hcol2]>*{
-    padding: 1px 6px;
-}
 
 
 

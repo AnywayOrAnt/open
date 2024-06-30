@@ -1,6 +1,7 @@
 if(!window.BREAK){
     window.BREAK = "■■■■■■■■";
 }
+
 function text2arr(text){
     return text.trim().replace(/<br>/g, BREAK).replace(/</g, "&lt;").replace(/>/g, "&gt;").split("\n");
 }
@@ -22,7 +23,7 @@ function arr2tbody(tbodySelector, text_2d_Array){
     tbody.innerHTML = arr;
 }
 
-window.addEventListener("DOMContentLoaded", function (event) {
+function textarea2div(){
     document.querySelectorAll("textarea").forEach(function (e, i) {
         let n = e.nodeName.toLowerCase();
         let c = e.className.trim();
@@ -40,26 +41,28 @@ window.addEventListener("DOMContentLoaded", function (event) {
             q.classList.add("pre-wrap");
         }
     });
-
-    let h1 = document.querySelector("h1");
-    h1.addEventListener("click", function(){
-        let size = prompt("font size?")*1;
-        !size && (size = 20);
-        console.log(size);
-        document.body.style.fontSize = size + "px";
-    });
-
-    let info = document.createElement("h1");
-    h1.parentNode.insertBefore(info, h1);
-    info.innerHTML = [
-        window.innerWidth,
-        navigator.userAgent
-    ].join("<br>");
-});
-
-function makeData4table(){
-
 }
+
+function widthAndNavigator() {
+    let h1 = document.querySelector("h1");
+    if(h1){
+        h1.addEventListener("click", function(){
+            let size = prompt("font size?")*1;
+            !size && (size = 20);
+            console.log(size);
+            document.body.style.fontSize = size + "px";
+        });
+    
+        let info = document.createElement("h1");
+        h1.parentNode.insertBefore(info, h1);
+        info.innerHTML = [
+            window.innerWidth,
+            navigator.userAgent
+        ].join("<br>");
+    }
+}
+
+
 
 function makeDataFromtable(){
     let dataRows = document.querySelector("table>tbody>tr");
@@ -131,3 +134,42 @@ function decodeAlphabets(string) {
     
     return string.join("");
 }
+
+function obj2list(obj) {
+    obj.parent = document.querySelector(obj.parent);
+
+    if(!obj.parent){
+        return false;
+    }
+
+    obj.nodeName = obj.parent.nodeName.toLowerCase();
+
+    if(!obj.listStyleType){
+        if(obj.nodeName == "ul"){
+            obj.listStyleType = "space-counter";
+        } else if(obj.nodeName == "ol"){
+            obj.listStyleType = "cjk-earthly-branch";
+        }
+    }
+
+    if(!obj.start){
+        obj.start = 1;
+    }
+
+    obj.parent.style.listStyleType = obj.listStyleType;
+    obj.parent.setAttribute("start", obj.start);
+
+    for(let i = 0, len = obj.arr.length; i < len; i++){
+        let current = obj.arr[i];
+        let li = document.createElement("li");
+        li.innerHTML = current;
+        obj.parent.appendChild(li);
+    }    
+}
+
+window.addEventListener("DOMContentLoaded", function (event) {
+    (function () {
+        textarea2div();
+        widthAndNavigator()
+    })();
+});
