@@ -17,10 +17,10 @@
 document.querySelector("input.ip").addEventListener("click", function (event) {
     let v1 = document.querySelector(".ip1").innerHTML.trim();
     let v3 = document.querySelector(".ip3").value.trim() + ".";
-    let v4 = document.querySelector(".ip3").value.trim().trim();
-    let total = "hppt://" + v1+v3+v4+ ":8888";
-    console.log(total);
-    // window.open(total);
+    let v4 = document.querySelector(".ip4").value.trim().trim();
+    let total = "http://" + v1+v3+v4+ ":8888";
+    // console.log(total);
+    window.open(total);
 })
     </script>
     </body>
