@@ -170,6 +170,11 @@ function obj2list(obj) {
 window.addEventListener("DOMContentLoaded", function (event) {
     (function () {
         textarea2div();
-        widthAndNavigator()
+        // widthAndNavigator();
+        document.body.setAttribute("data-browser", [
+            window.innerWidth, 
+            window.innerHeight, 
+            navigator.userAgent
+        ].join(" | "));
     })();
 });
