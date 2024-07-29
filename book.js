@@ -43,27 +43,6 @@ function textarea2div(){
     });
 }
 
-function widthAndNavigator() {
-    let h1 = document.querySelector("h1");
-    if(h1){
-        h1.addEventListener("click", function(){
-            let size = prompt("font size?")*1;
-            !size && (size = 20);
-            console.log(size);
-            document.body.style.fontSize = size + "px";
-        });
-    
-        let info = document.createElement("h1");
-        h1.parentNode.insertBefore(info, h1);
-        info.innerHTML = [
-            window.innerWidth,
-            navigator.userAgent
-        ].join("<br>");
-    }
-}
-
-
-
 function makeDataFromtable(){
     let dataRows = document.querySelector("table>tbody>tr");
     let arrData = [];
@@ -170,6 +149,11 @@ function obj2list(obj) {
 window.addEventListener("DOMContentLoaded", function (event) {
     (function () {
         textarea2div();
-        widthAndNavigator()
+        // widthAndNavigator();
+        document.body.setAttribute("data-browser", [
+            window.innerWidth, 
+            window.innerHeight, 
+            navigator.userAgent
+        ].join(" | "));
     })();
 });

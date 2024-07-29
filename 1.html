@@ -1,0 +1,35 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>localIP</title>
+    <style>
+body{
+    font-size: 48px;
+}
+input{
+    font-size: 48px;
+}
+    </style>
+    </head>
+    <body>
+    <section>
+        <span class="ip1">192.168.</span>
+        <input class="ip3" type="text" value="123">
+        <input class="ip4" type="text" value="111">
+        <!-- <input class="ip4" type="text" value="111"> -->
+    </section>
+    <input type="button" value="go" class="ip">
+    <script>
+document.querySelector("input.ip").addEventListener("click", function (event) {
+    let v1 = document.querySelector(".ip1").innerHTML.trim();
+    let v3 = document.querySelector(".ip3").value.trim() + ".";
+    let v4 = document.querySelector(".ip4").value.trim().trim();
+    let total = "http://" + v1+v3+v4+ ":8888";
+    // console.log(total);
+    window.open(total);
+})
+    </script>
+    </body>
+    </html>
