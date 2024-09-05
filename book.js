@@ -24,7 +24,9 @@ function arr2tbody(tbodySelector, text_2d_Array){
 }
 
 function textarea2div(){
-    document.querySelectorAll("textarea").forEach(function (e, i) {
+    document
+        .querySelectorAll("textarea")
+        .forEach(function (e, i) {
         let n = e.nodeName.toLowerCase();
         let c = e.className.trim();
         h = e.textContent.trim();
@@ -84,7 +86,6 @@ function randomClass(upperOrLowerCase) {
     }
 
     arr = arr.join("");
-
     arr = upperOrLowerCase == true? arr.toUpperCase() : arr;
 
     return arr;
@@ -150,10 +151,40 @@ window.addEventListener("DOMContentLoaded", function (event) {
     (function () {
         textarea2div();
         // widthAndNavigator();
+        let width = window.innerWidth,
+            height = window.innerHeight,
+            agent = navigator.userAgent,
+            fontSize = 20,
+            chapters = null,
+            currentChapter = localStorage.getItem("currentChapter") || 1
         document.body.setAttribute("data-browser", [
-            window.innerWidth, 
-            window.innerHeight, 
-            navigator.userAgent
+            width, 
+            height, 
+            agent
         ].join(" | "));
+
+        chapters = document.querySelectorAll("chapter");
+        currentChapter -= 1;
+
+        chapters.forEach(function (ele, i) {
+            let act = i == currentChapter? "block":"none";
+            ele.style.display = act;
+        });
+
+        document
+            .querySelectorAll("h1, h2, h3, h4")
+            .forEach(function (ele) {
+                ele.addEventListener("contextmenu", function (event) {
+                    event.preventDefault();
+                    let chap = prompt("chapter");
+                    if(!isNaN(chap * 1)){
+                        chap = chap*1 - 1;
+                        chapters.forEach(function (ele, i) {
+                            let act = i == chap? "block":"none";
+                            ele.style.display = act;
+                        });             
+                    }
+                });
+            });
     })();
 });
