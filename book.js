@@ -195,44 +195,42 @@ function getAllHeaders() {
 
 window.addEventListener("DOMContentLoaded", function (event) {
     (function () {
-        // console.log(document.querySelectorAll("address").length);
         textarea2div();
-        // widthAndNavigator();
+
         let chapters = getChapters(),
             pageKey = getPageKey(),
             currentPage = getCurrentPage();
 
         document.title = pageKey + " | " + currentPage;
-        document.body.setAttribute("data-browser", getBrowserData("arr").join(" | "));
+        document.body.setAttribute(
+            "data-browser", 
+            getBrowserData("arr").join(" | ")
+        );
 
         if(currentPage > chapters.lenght){
-            prompt("ininput a number less than" + chapters.length);
+            currentPage = 0;
         }
         
         chapters.forEach(function (ele, i) {
-            ele.style.display = i == currentPge? "block":"none";
+            ele.style.display = i == currentPage? "block":"none";
         });
 
-        chapters.length > 0 && document
-            .querySelectorAll("h1, h2, h3, h4, h5, h6")
-            .forEach(function (ele) {
+        chapters.length > 0 && getAllHeaders().forEach(function (ele) {
                 ele.addEventListener("contextmenu", function (event) {
                     event.preventDefault();
+                    
                     let chap = prompt("chapter");
                     if(!isNaN(chap * 1)){
-                        // chap = chap*1 - 1;
-                        chap = chap*1;
-
-                        localStorage.setItem(currentPageKey, chap);
-                        document.title = currentPageKey + " | " + chap;
-                        chap -= 1;
-                        chapters.forEach(function (ele, i) {
-                            let act = i == chap? "block":"none";
-                            ele.style.display = act;
-                        }); 
-                        
-                        
+                        chap = chap*1 - 1;
                     }
+
+                    localStorage.setItem(pageKey, chap);
+                    document.title = pageKey + " | " + chap;
+                    
+                    chapters.forEach(function (ele, i) {
+                        let act = i == chap? "block":"none";
+                        ele.style.display = act;
+                    }); 
                 });
             });
     })();
