@@ -147,42 +147,91 @@ function obj2list(obj) {
     }    
 }
 
+function changeTitle(arr, delimiter) {
+    delimiter = delimiter || " | ";
+    delimiter = arr.join(delimiter);
+    document.title = delimiter;
+}
+
+function getPageKey(){
+    let key = document.body.getAttribute("data-current-page") || "currentChapter";
+    return key;
+}
+
+function getCurrentPage(){
+    let key = getPageKey();
+    let page = localStorage.getItem(key)*1 || 1;
+    return page;
+}
+
+function getChapters() {
+    return document.querySelectorAll("body>main");
+}
+
+function getBrowserData(dataType) {
+    dataType = dataType || "array";
+    let width = window.innerWidth,
+        height = window.innerHeight,
+        agent = navigator.userAgent;
+
+    if(dataType === "arr"){
+        return [
+            width,
+            height,
+            agent
+        ];
+    } else if (dataType === "obj"){
+        return {
+            width: width,
+            height: height,
+            agent: agent
+        }
+    }
+}
+
+function getAllHeaders() {
+    return document.querySelectorAll("h1, h2, h3, h4, h5, h6");
+}
+
 window.addEventListener("DOMContentLoaded", function (event) {
     (function () {
+        // console.log(document.querySelectorAll("address").length);
         textarea2div();
         // widthAndNavigator();
-        let width = window.innerWidth,
-            height = window.innerHeight,
-            agent = navigator.userAgent,
-            fontSize = 20,
-            chapters = null,
-            currentChapter = localStorage.getItem("currentChapter") || 1
-        document.body.setAttribute("data-browser", [
-            width, 
-            height, 
-            agent
-        ].join(" | "));
+        let chapters = getChapters(),
+            pageKey = getPageKey(),
+            currentPage = getCurrentPage();
 
-        chapters = document.querySelectorAll("chapter");
-        currentChapter -= 1;
+        document.title = pageKey + " | " + currentPage;
+        document.body.setAttribute("data-browser", getBrowserData("arr").join(" | "));
 
+        if(currentPage > chapters.lenght){
+            prompt("ininput a number less than" + chapters.length);
+        }
+        
         chapters.forEach(function (ele, i) {
-            let act = i == currentChapter? "block":"none";
-            ele.style.display = act;
+            ele.style.display = i == currentPge? "block":"none";
         });
 
-        document
-            .querySelectorAll("h1, h2, h3, h4")
+        chapters.length > 0 && document
+            .querySelectorAll("h1, h2, h3, h4, h5, h6")
             .forEach(function (ele) {
                 ele.addEventListener("contextmenu", function (event) {
                     event.preventDefault();
                     let chap = prompt("chapter");
                     if(!isNaN(chap * 1)){
-                        chap = chap*1 - 1;
+                        // chap = chap*1 - 1;
+                        chap = chap*1;
+
+                        localStorage.setItem(currentPageKey, chap);
+                        document.title = currentPageKey + " | " + chap;
+                        chap -= 1;
                         chapters.forEach(function (ele, i) {
                             let act = i == chap? "block":"none";
                             ele.style.display = act;
-                        });             
+                        }); 
+                        
+                        
                     }
                 });
             });
