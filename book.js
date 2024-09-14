@@ -200,14 +200,14 @@ window.addEventListener("DOMContentLoaded", function (event) {
         let chapters = getChapters(),
             pageKey = getPageKey(),
             currentPage = getCurrentPage();
-
+        console.log(chapters, pageKey, currentPage);
         document.title = pageKey + " | " + currentPage;
         document.body.setAttribute(
             "data-browser", 
             getBrowserData("arr").join(" | ")
         );
 
-        if(currentPage > chapters.lenght){
+        if(currentPage >= chapters.length){
             currentPage = 0;
         }
         
@@ -222,6 +222,10 @@ window.addEventListener("DOMContentLoaded", function (event) {
                 let chap = prompt("chapter");
                 if(!isNaN(chap * 1)){
                     chap = chap*1 - 1;
+                }
+
+                if(chap >= chapters.length){
+                    chap = currentPage;
                 }
 
                 localStorage.setItem(pageKey, chap);
