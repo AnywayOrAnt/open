@@ -154,13 +154,22 @@ function changeTitle(arr, delimiter) {
 }
 
 function getPageKey(){
-    let key = document.body.getAttribute("data-current-page") || "currentChapter";
+    let now = new Date();
+    let nowString = "key" + [
+        now.getFullYear(),
+        now.getMonth() + 1,
+        now.getDate(),
+        now.getHours(),
+        now.getMinutes(),
+        now.getSeconds()
+    ].join("_");
+    let key = document.body.getAttribute("data-current-page") || nowString;
     return key;
 }
 
 function getCurrentPage(){
     let key = getPageKey();
-    let page = localStorage.getItem(key)*1 || 1;
+    let page = localStorage.getItem(key)*1;
     return page;
 }
 
@@ -227,7 +236,7 @@ window.addEventListener("DOMContentLoaded", function (event) {
                 if(chap >= chapters.length){
                     chap = currentPage;
                 }
-
+                console.log(pageKey, chap);
                 localStorage.setItem(pageKey, chap);
                 document.title = pageKey + " | " + chap;
                 
