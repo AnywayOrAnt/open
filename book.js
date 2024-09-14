@@ -216,22 +216,22 @@ window.addEventListener("DOMContentLoaded", function (event) {
         });
 
         chapters.length > 0 && getAllHeaders().forEach(function (ele) {
-                ele.addEventListener("contextmenu", function (event) {
-                    event.preventDefault();
-                    
-                    let chap = prompt("chapter");
-                    if(!isNaN(chap * 1)){
-                        chap = chap*1 - 1;
-                    }
+            ele.addEventListener("contextmenu", function (event) {
+                event.preventDefault();
+                
+                let chap = prompt("chapter");
+                if(!isNaN(chap * 1)){
+                    chap = chap*1 - 1;
+                }
 
-                    localStorage.setItem(pageKey, chap);
-                    document.title = pageKey + " | " + chap;
-                    
-                    chapters.forEach(function (ele, i) {
-                        let act = i == chap? "block":"none";
-                        ele.style.display = act;
-                    }); 
-                });
+                localStorage.setItem(pageKey, chap);
+                document.title = pageKey + " | " + chap;
+                
+                chapters.forEach(function (ele, i) {
+                    let act = i == chap? "block":"none";
+                    ele.style.display = act;
+                }); 
             });
+        });
     })();
 });
