@@ -53,8 +53,8 @@ table{
     min-width:100%;
 }
 
-hide,
-.hide,
+body>del,
+body>main>del,
 .d-none{
     display: none !important;
 }
