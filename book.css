@@ -67,7 +67,8 @@ div.code{
     /* font-weight: bold; */
 }
 
-body>* + div{
+body>*,
+body>main>*{
     margin-top: 0.35em;
 }
 

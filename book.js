@@ -210,7 +210,7 @@ window.addEventListener("DOMContentLoaded", function (event) {
             pageKey = getPageKey(),
             currentPage = getCurrentPage();
         console.log(chapters, pageKey, currentPage);
-        document.title = pageKey + " | " + currentPage;
+        document.title = currentPage + 1 + " | " + pageKey;
         document.body.setAttribute(
             "data-browser", 
             getBrowserData("arr").join(" | ")
@@ -238,7 +238,7 @@ window.addEventListener("DOMContentLoaded", function (event) {
                 }
                 console.log(pageKey, chap);
                 localStorage.setItem(pageKey, chap);
-                document.title = pageKey + " | " + chap;
+                document.title = chap + 1 + " | " + pageKey;
                 
                 chapters.forEach(function (ele, i) {
                     let act = i == chap? "block":"none";
