@@ -27,11 +27,21 @@ function textarea2div(){
     document
         .querySelectorAll("textarea")
         .forEach(function (e, i) {
-        let n = e.nodeName.toLowerCase();
-        let c = e.className.trim();
+
+        let n = e.nodeName.toLowerCase(),
+            c = e.className.trim(),
+            p = e.parentNode,
+            q = document.createElement("div");
+
         h = e.textContent.trim();
-        let p = e.parentNode;
-        let q = document.createElement("div");
+        
+        if(
+            (new String(h).startsWith("<style>")) ||
+            (new String(h).startsWith("<!DOCTYPE html>"))
+        ){
+            h = "    " + h
+        }
+
         q.textContent = h;
         p.insertBefore(q, e);
         p.removeChild(e);
@@ -157,11 +167,11 @@ function getPageKey(){
     let now = new Date();
     let nowString = "key" + [
         now.getFullYear(),
-        now.getMonth() + 1,
-        now.getDate(),
-        now.getHours(),
-        now.getMinutes(),
-        now.getSeconds()
+        // now.getMonth() + 1,
+        // now.getDate(),
+        // now.getHours(),
+        // now.getMinutes(),
+        // now.getSeconds()
     ].join("_");
     let key = document.body.getAttribute("data-current-page") || nowString;
     return key;
@@ -209,7 +219,7 @@ window.addEventListener("DOMContentLoaded", function (event) {
         let chapters = getChapters(),
             pageKey = getPageKey(),
             currentPage = getCurrentPage();
-        console.log(chapters, pageKey, currentPage);
+        
         document.title = currentPage + 1 + " | " + pageKey;
         document.body.setAttribute(
             "data-browser", 
