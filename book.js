@@ -36,8 +36,9 @@ function textarea2div(){
         h = e.textContent.trim();
         
         if(
-            (new String(h).startsWith("<style>")) ||
-            (new String(h).startsWith("<!DOCTYPE html>"))
+            (new String(h).startsWith("<style")) ||
+            (new String(h).startsWith("<!DOCTYPE html>")) ||
+            (new String(h).startsWith("<script"))
         ){
             h = "    " + h
         }
