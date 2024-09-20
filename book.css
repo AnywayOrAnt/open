@@ -5,8 +5,10 @@ body{
 }
 
 div.code,
+body>*,
 body>*>*{
-    word-break: break-all;
+    /* word-break: break-all; */
+    word-break:initial
 }
 
 .pre-wrap{
@@ -112,6 +114,10 @@ body>main>*{
 
 .col5{
     grid-template-columns: max-content max-content max-content max-content 1fr;
+}
+
+.col6{
+    grid-template-columns: max-content max-content max-content max-content max-content 1fr;
 }
 
 .pre-wrap{

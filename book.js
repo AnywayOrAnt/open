@@ -215,49 +215,49 @@ function getAllHeaders() {
     return document.querySelectorAll("h1, h2, h3, h4, h5, h6");
 }
 
-window.addEventListener("DOMContentLoaded", function (event) {
-    (function () {
-        textarea2div();
+function windowLoad() {
+    textarea2div();
 
-        let chapters = getChapters(),
-            pageKey = getPageKey(),
-            currentPage = getCurrentPage();
-        
-        document.title = currentPage + 1 + " | " + pageKey;
-        document.body.setAttribute(
-            "data-browser", 
-            getBrowserData("arr").join(" | ")
-        );
+    let chapters = getChapters(),
+        pageKey = getPageKey(),
+        currentPage = getCurrentPage();
+    
+    document.title = currentPage + 1 + " | " + pageKey;
+    document.body.setAttribute(
+        "data-browser", 
+        getBrowserData("arr").join(" | ")
+    );
 
-        if(currentPage >= chapters.length){
-            currentPage = 0;
-        }
-        
-        chapters.forEach(function (ele, i) {
-            ele.style.display = i == currentPage? "block":"none";
+    if(currentPage >= chapters.length){
+        currentPage = 0;
+    }
+    
+    chapters.forEach(function (ele, i) {
+        ele.style.display = i == currentPage? "block":"none";
+    });
+
+    chapters.length > 0 && getAllHeaders().forEach(function (ele) {
+        ele.addEventListener("contextmenu", function (event) {
+            event.preventDefault();
+            event.stopPropagation();
+            
+            let chap = prompt("chapter");
+            if(!isNaN(chap * 1)){
+                chap = chap*1 - 1;
+                chap = chap < 0? 0 : chap;
+            }
+
+            if(chap >= chapters.length){
+                chap = currentPage;
+            }
+            console.log(pageKey, chap);
+            localStorage.setItem(pageKey, chap);
+            document.title = chap + 1 + " | " + pageKey;
+            
+            chapters.forEach(function (ele, i) {
+                let act = i == chap? "block":"none";
+                ele.style.display = act;
+            }); 
         });
-
-        chapters.length > 0 && getAllHeaders().forEach(function (ele) {
-            ele.addEventListener("contextmenu", function (event) {
-                event.preventDefault();
-                
-                let chap = prompt("chapter");
-                if(!isNaN(chap * 1)){
-                    chap = chap*1 - 1;
-                }
-
-                if(chap >= chapters.length){
-                    chap = currentPage;
-                }
-                console.log(pageKey, chap);
-                localStorage.setItem(pageKey, chap);
-                document.title = chap + 1 + " | " + pageKey;
-                
-                chapters.forEach(function (ele, i) {
-                    let act = i == chap? "block":"none";
-                    ele.style.display = act;
-                }); 
-            });
-        });
-    })();
-});
+    });
+}
