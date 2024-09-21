@@ -40,7 +40,8 @@ function textarea2div(){
             // (new String(h).startsWith("<!DOCTYPE html>")) ||
             // (new String(h).startsWith("<script"))
 
-            new String(h).startsWith("<")
+            new String(h).startsWith("<") &&
+            !(new String(h).startsWith("<%"))
         ){
             h = "    " + h
         }
