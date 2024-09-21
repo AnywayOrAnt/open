@@ -1,3 +1,16 @@
+html[lang=zh]{
+    font-family: SimSun, SimHei;
+}
+
+html[lang=zh] h1,
+html[lang=zh] h2,
+html[lang=zh] h3,
+html[lang=zh] h4,
+html[lang=zh] h5,
+html[lang=zh] h6{
+    font-family: SimHei, SimSun;
+}
+
 body{
     font-size: 20px;
     /* background-color: burlywood; */
