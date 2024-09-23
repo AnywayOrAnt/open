@@ -148,6 +148,10 @@ body>*:has(.no:first-child){
     border: none !important;
 }
 
+li.none{
+    list-style-type: none;
+}
+
 
 
 
