@@ -2,6 +2,10 @@ html[lang=zh]{
     font-family: SimSun, SimHei;
 }
 
+html[lang=ja]{
+    font-family: "MS MINCHO", "MS GOTHIC";
+}
+
 html[lang=zh] h1,
 html[lang=zh] h2,
 html[lang=zh] h3,
@@ -85,8 +89,10 @@ div.code{
 }
 
 body>*,
+body>blockquote>*,
 body>main>*{
     margin-top: 0.35em;
+    margin-bottom: 0.35em;
 }
 
 .col2,
