@@ -207,3 +207,7 @@ li[①]{
 li[②]{
     list-style-type: '② ';
 }
+
+li[🌎]{
+    list-style-type: '🌎 ';
+}
