@@ -190,6 +190,7 @@ li[☆]{
     list-style-type: '☆';
 }
 
+ul[🕯],
 li[🕯]{
     list-style-type: '🕯 ';
 }
