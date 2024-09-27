@@ -154,12 +154,12 @@ body>*:has(.no:first-child){
     border: none !important;
 }
 
-ul.right-hand{
+ul[👉]{
     list-style-type: "👉 ";
 }
 
-li.none{
-    list-style-type: none;
+li{
+    margin-bottom: 0.35em;
 }
 
 ul.kome{
@@ -176,4 +176,33 @@ div.table>table{
 
 li[※]{
     list-style-type: '※ ';
+}
+
+li[🖋]{
+    list-style-type: '🖋 ';
+}
+
+li[★]{
+    list-style-type: '★ ';
+}
+
+li[☆]{
+    list-style-type: '☆';
+}
+
+li[🕯]{
+    list-style-type: '🕯 ';
+}
+
+li[none]{
+    list-style-type: '';
+}
+
+
+li[①]{
+    list-style-type: '① ';
+}
+
+li[②]{
+    list-style-type: '② ';
 }
