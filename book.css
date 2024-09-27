@@ -154,15 +154,26 @@ body>*:has(.no:first-child){
     border: none !important;
 }
 
-ul.right{
-    list-style-type: "👉";
+ul.right-hand{
+    list-style-type: "👉 ";
 }
 
 li.none{
     list-style-type: none;
 }
 
-ul>li[style]{
-    /* padding-left: 2em; */
+ul.kome{
+    list-style-type: "※ ";
 }
 
+div.table{
+    overflow-y: auto;
+}
+
+div.table>table{
+    min-width: 1440px;
+}
+
+li[※]{
+    list-style-type: '※ ';
+}
