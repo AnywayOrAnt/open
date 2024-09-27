@@ -154,16 +154,15 @@ body>*:has(.no:first-child){
     border: none !important;
 }
 
+ul.right{
+    list-style-type: "👉";
+}
+
 li.none{
     list-style-type: none;
 }
 
-
-
-
-
-
-
-
-
+ul>li[style]{
+    /* padding-left: 2em; */
+}
 
