@@ -174,18 +174,22 @@ div.table>table{
     min-width: 1440px;
 }
 
+ul[※],
 li[※]{
     list-style-type: '※ ';
 }
 
+ul[🖋],
 li[🖋]{
     list-style-type: '🖋 ';
 }
 
+ul[★],
 li[★]{
     list-style-type: '★ ';
 }
 
+ul[☆],
 li[☆]{
     list-style-type: '☆';
 }
@@ -195,19 +199,22 @@ li[🕯]{
     list-style-type: '🕯 ';
 }
 
+ul[none],
 li[none]{
     list-style-type: '';
 }
 
-
+ul[①],
 li[①]{
     list-style-type: '① ';
 }
 
+ul[②],
 li[②]{
     list-style-type: '② ';
 }
 
+ul[🌎],
 li[🌎]{
     list-style-type: '🌎 ';
 }
