@@ -174,6 +174,14 @@ div.table>table{
     min-width: 1440px;
 }
 
+ul{
+    list-style-type: '● ';
+}
+
+ul ul{
+    list-style-type: '〇 ';
+}
+
 ul[※],
 li[※]{
     list-style-type: '※ ';
