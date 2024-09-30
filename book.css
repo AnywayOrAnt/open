@@ -230,3 +230,7 @@ ul[🌎],
 li[🌎]{
     list-style-type: '🌎 ';
 }
+
+video{
+    width: 100%;
+}
