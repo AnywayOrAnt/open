@@ -239,20 +239,11 @@ img{
     width: 100%;
 }
 
-.pic-nav{
-    width: 100%;
-    position: fixed;
-    left: 0;
-    top:0;
-}
-
-.pic-nav>*{
-    background-color: blanchedalmond;
-}
-.pic-nav>*{
-    display: inline;
+.pic-nav > *{
+    background-color: aliceblue;
 }
 
 .pic-nav a{
     text-decoration: none;
+    background-size: contain;
 }
