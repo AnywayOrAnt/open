@@ -234,31 +234,40 @@ function windowLoad() {
     }
     
     chapters.forEach(function (ele, i) {
-        ele.style.display = i == currentPage? "block":"none";
+        //ele.style.display = i == currentPage? "block":"none";
     });
 
-    chapters.length > 0 && getAllHeaders().forEach(function (ele) {
-        ele.addEventListener("contextmenu", function (event) {
-            event.preventDefault();
-            event.stopPropagation();
-            
-            let chap = prompt("chapter");
-            if(!isNaN(chap * 1)){
-                chap = chap*1 - 1;
-                chap = chap < 0? 0 : chap;
-            }
+    let go = chapters.length > 0;
 
-            if(chap >= chapters.length){
-                chap = currentPage;
-            }
-            console.log(pageKey, chap);
-            localStorage.setItem(pageKey, chap);
-            document.title = chap + 1 + " | " + pageKey;
+    go  && getAllHeaders().forEach(function (ele) {
+        // ele.addEventListener("contextmenu", function (event) {
+        //     event.preventDefault();
+        //     event.stopPropagation();
             
-            chapters.forEach(function (ele, i) {
-                let act = i == chap? "block":"none";
-                ele.style.display = act;
-            }); 
-        });
+        //     let chap = prompt("chapter");
+        //     if(!isNaN(chap * 1)){
+        //         chap = chap*1 - 1;
+        //         chap = chap < 0? 0 : chap;
+        //     }
+
+        //     if(chap >= chapters.length){
+        //         chap = currentPage;
+        //     }
+        //     console.log(pageKey, chap);
+        //     localStorage.setItem(pageKey, chap);
+        //     document.title = chap + 1 + " | " + pageKey;
+            
+        //     chapters.forEach(function (ele, i) {
+        //         let act = i == chap? "block":"none";
+        //         ele.style.display = act;
+        //     }); 
+        // });
+
+
+    });
+
+    go && document.addEventListener("keyup", function (event) {
+        event.stopPropagation();
+        console.log(event.key, event.target);
     });
 }

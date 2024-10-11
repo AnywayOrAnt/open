@@ -78,6 +78,8 @@ table{
     min-width:100%;
 }
 
+dnone,
+[dnone],
 body>del,
 body>main>del,
 .d-none{
@@ -286,4 +288,8 @@ ul[bracketNumber]>li:nth-child(9){
 
 ul[bracketNumber]>li:nth-child(10){
     list-style-type: "(10) ";
+}
+
+[breakall]{
+    word-break: break-all !important;
 }
