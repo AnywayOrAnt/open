@@ -188,29 +188,43 @@ ul ul{
     list-style-type: '〇 ';
 }
 
-ul[※],
-li[※]{
+ul[kome],
+li[kome]{
     list-style-type: '※ ';
 }
 
-ul[🖋],
-li[🖋]{
+ul[kome]>li:first-child{
+    list-style-type: '※ ';
+    font-weight: bolder;
+}
+
+ul[kome]>li:not(:first-child){
+    list-style-type: none;
+}
+
+ul[pen],
+li[pen]{
     list-style-type: '🖋 ';
 }
 
-ul[★],
-li[★]{
+ul[star],
+li[star]{
     list-style-type: '★ ';
 }
 
-ul[☆],
-li[☆]{
-    list-style-type: '☆';
+ul[candle],
+li[candle]{
+    list-style-type: '🕯 ';
 }
 
-ul[🕯],
-li[🕯]{
-    list-style-type: '🕯 ';
+ul[check],
+li[check]{
+    list-style-type: '✔ ';
+}
+
+ul[coffee],
+li[coffee]{
+    list-style-type: '☕ ';
 }
 
 ul[none],
@@ -218,18 +232,8 @@ li[none]{
     list-style-type: '';
 }
 
-ul[①],
-li[①]{
-    list-style-type: '① ';
-}
-
-ul[②],
-li[②]{
-    list-style-type: '② ';
-}
-
-ul[🌎],
-li[🌎]{
+ul[earth],
+li[earth]{
     list-style-type: '🌎 ';
 }
 
