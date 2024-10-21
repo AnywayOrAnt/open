@@ -40,8 +40,11 @@ function textarea2div(){
             // (new String(h).startsWith("<!DOCTYPE html>")) ||
             // (new String(h).startsWith("<script"))
 
-            new String(h).startsWith("<") &&
-            !(new String(h).startsWith("<%"))
+            new String(h).startsWith("<") && (
+                !(new String(h).startsWith("<%")) ||
+                !(new String(h).startsWith("<?"))
+            )
+            
         ){
             h = "    " + h
         }
@@ -270,4 +273,28 @@ function windowLoad() {
         event.stopPropagation();
         console.log(event.key, event.target);
     });
+}
+
+function fnSave(localStorageSaveKey){
+    localStorageSaveKey = localStorageSaveKey || 
+    document.body.getAttribute("data-save-key")
+    (function () {
+        let date = new Date();
+        date = [
+            date.getFullYear(),
+            date.getMonth() + 1,
+            date.getDate(),
+            date.getHours(),
+            date.getMinutes(),
+            date.getSeconds(),
+            date.getMilliseconds()
+        ].join("_");
+        return date;
+    })();
+    let b = jQuery(document.body);
+    let w = jQuery(window);
+    let h= jb.height();
+    let s= w.scrollTop();
+    let r= Math.round( s/h *1000) /1000;
+    localStorage.setItem( key, r);
 }
