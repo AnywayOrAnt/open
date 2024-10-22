@@ -46,6 +46,10 @@ body>*>*{
     body{
         word-break: break-all;
     }
+
+    div.code, body>*, body>*>* {
+        word-break: break-all;
+    }
 }
 
 @Media (min-width:512px){
@@ -296,4 +300,13 @@ ul[bracketNumber]>li:nth-child(10){
 
 [breakall]{
     word-break: break-all !important;
+}
+
+div[b]{
+    padding-left: 2em;
+    font-weight: bolder;
+}
+
+[red]{
+    color:red;
 }
