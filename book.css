@@ -310,3 +310,8 @@ div[b]{
 [red]{
     color:red;
 }
+
+span[b]{
+    font-weight: bold;
+    padding: 0 0.3em;
+}
