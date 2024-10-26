@@ -298,20 +298,28 @@ ul[bracketNumber]>li:nth-child(10){
     list-style-type: "(10) ";
 }
 
+ul[solidSquare],
+li[solidSquare]{
+    list-style-type: '■ ';
+}
+
 [breakall]{
     word-break: break-all !important;
 }
 
 div[b]{
     padding-left: 2em;
-    font-weight: bolder;
 }
 
 [red]{
     color:red;
 }
 
-span[b]{
+*[b]{
     font-weight: bold;
+}
+
+span[b]{
     padding: 0 0.3em;
 }
+

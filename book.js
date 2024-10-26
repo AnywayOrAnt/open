@@ -222,7 +222,7 @@ function windowLoad() {
         pageKey = getPageKey(),
         currentPage = getCurrentPage();
     
-    document.title = currentPage + 1 + " | " + pageKey;
+    //document.title = currentPage + 1 + " | " + pageKey;
     document.body.setAttribute(
         "data-browser", 
         getBrowserData("arr").join(" | ")
