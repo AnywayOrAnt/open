@@ -258,43 +258,43 @@ img{
     background-size: contain;
 }
 
-ul[bracketNumber]>li:nth-child(1){
+[bracketNumber]>li:nth-child(1){
     list-style-type: "(1) ";
 }
 
-ul[bracketNumber]>li:nth-child(2){
+[bracketNumber]>li:nth-child(2){
     list-style-type: "(2) ";
 }
 
-ul[bracketNumber]>li:nth-child(3){
+[bracketNumber]>li:nth-child(3){
     list-style-type: "(3) ";
 }
 
-ul[bracketNumber]>li:nth-child(4){
+[bracketNumber]>li:nth-child(4){
     list-style-type: "(4) ";
 }
 
-ul[bracketNumber]>li:nth-child(5){
+[bracketNumber]>li:nth-child(5){
     list-style-type: "(5) ";
 }
 
-ul[bracketNumber]>li:nth-child(6){
+[bracketNumber]>li:nth-child(6){
     list-style-type: "(6) ";
 }
 
-ul[bracketNumber]>li:nth-child(7){
+[bracketNumber]>li:nth-child(7){
     list-style-type: "(7) ";
 }
 
-ul[bracketNumber]>li:nth-child(8){
+[bracketNumber]>li:nth-child(8){
     list-style-type: "(8) ";
 }
 
-ul[bracketNumber]>li:nth-child(9){
+[bracketNumber]>li:nth-child(9){
     list-style-type: "(9) ";
 }
 
-ul[bracketNumber]>li:nth-child(10){
+[bracketNumber]>li:nth-child(10){
     list-style-type: "(10) ";
 }
 
