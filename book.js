@@ -34,12 +34,22 @@ function textarea2div(){
 }
 
 function windowLoad() {
-    document.body.save = true;
     textarea2div();
     fnSavePage();
+    document.body.addEventListener("contextmenu", (event)=>{
+        event.stopPropagation();
+        event.preventDefault();
+        console.log(event.target);
+        let showStatus = alert("show all?");
+        if(show){
+            let saveKey = document.body.getAttribute("data-save-key");
+            localStorage.removeItem(saveKey);
+            fnSavePage();
+        }
+    });
 }
 
-let fnSavePage = ()=>{
+function fnSavePage (){
     let saveKey = document.body.getAttribute("data-save-key");
     let stints = document.querySelectorAll("body>*>*");
     stints.forEach((ele, index)=>{
