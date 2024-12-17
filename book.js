@@ -36,22 +36,20 @@ function textarea2div(){
 function windowLoad() {
     textarea2div();
     fnSavePage();
-    document.body.addEventListener("contextmenu", (event)=>{
-        event.stopPropagation();
-        event.preventDefault();
-        console.log(event.target);
-        let showStatus = alert("show all?");
-        if(show){
-            let saveKey = document.body.getAttribute("data-save-key");
-            localStorage.removeItem(saveKey);
-            fnSavePage();
-        }
-    });
 }
 
 function fnSavePage (){
     let saveKey = document.body.getAttribute("data-save-key");
     let stints = document.querySelectorAll("body>*>*");
+
+    let h1 = document.createElement("h1");
+    document.body.appendChild(h1);
+    h1.innerHTML = "clear save";
+    h1.classList.add("clear-save");
+    h1.style.position = "fixed";
+    h1.style.right = 0;
+    h1.style.bottom = 0;
+
     stints.forEach((ele, index)=>{
         ele.saveIndex = index;
     });
@@ -60,27 +58,33 @@ function fnSavePage (){
         let current = localStorage.getItem(saveKey)*1;
 
         if(current>0){
-            stints.forEach((stint, idx)=>{
-                if(idx < current){
-                    stint.classList.add("d-none");
-                }
-            });
+            fnSavePageUpdate(stints, current);
         }
 
         stints.forEach((ele, index)=>{
             ele.addEventListener("dblclick", (event)=>{
                 localStorage.setItem(saveKey, index);
                 event.stopPropagation();
-                // console.log(event.target);
-                stints.forEach((ea, i)=>{
-                    // console.log(i, ele.saveIndex);
-                    if(i < ele.saveIndex){
-                        ea.classList.add("d-none");
-                    }
-                });
+                fnSavePageUpdate(stints, index);
             });
         });
+
+        h1.addEventListener("dblclick", (event)=>{
+            event.stopPropagation();
+            event.preventDefault();
+            let saveKey = document.body.getAttribute("data-save-key");
+            localStorage.removeItem(saveKey);
+            location.reload();
+        });
     }
+}
+
+function fnSavePageUpdate(elements, current){
+    elements.forEach((ea, i)=>{
+        if(i < current){
+            ea.classList.add("d-none");
+        }
+    });
 }
 
 window.onload = windowLoad;
