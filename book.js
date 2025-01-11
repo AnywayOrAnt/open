@@ -44,7 +44,7 @@ function fnSavePage (){
 
     let h1 = document.createElement("h1");
     document.body.appendChild(h1);
-    h1.innerHTML = "clear save";
+    h1.innerHTML = "クリア";
     h1.classList.add("clear-save");
     h1.style.position = "fixed";
     h1.style.right = 0;
