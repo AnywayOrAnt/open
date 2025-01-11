@@ -15,6 +15,15 @@ html[lang=zh] h6{
     font-family: SimHei, SimSun;
 }
 
+html[lang=ja] h1,
+html[lang=ja] h2,
+html[lang=ja] h3,
+html[lang=ja] h4,
+html[lang=ja] h5,
+html[lang=ja] h6{
+    font-family:" MS GOTHIC", "MS MINCHO";
+}
+
 .code{
     font-family: 'Courier New', Courier, monospace;
 }
@@ -85,7 +94,7 @@ table{
     min-width:100%;
 }
 
-dnone,
+[data-hide],
 [dnone],
 body>del,
 body>main>del,
