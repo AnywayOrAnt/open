@@ -1,8 +1,10 @@
-html[lang=zh]{
+html[lang=zh],
+*[lang=zh]{
     font-family: SimSun, SimHei;
 }
 
-html[lang=ja]{
+html[lang=ja],
+*[lang=ja]{
     font-family: "MS MINCHO", "MS GOTHIC";
 }
 
@@ -21,7 +23,7 @@ html[lang=ja] h3,
 html[lang=ja] h4,
 html[lang=ja] h5,
 html[lang=ja] h6{
-    font-family:" MS GOTHIC", "MS MINCHO";
+    font-family: "MS GOTHIC", "MS MINCHO";
 }
 
 .code{
