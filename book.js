@@ -1,19 +1,19 @@
 function textarea2div(){
     document
-        .querySelectorAll("textarea")
+        .querySelectorAll( "textarea")
         .forEach(function (e, i) {
 
-        let n = e.nodeName.toLowerCase(),
-            c = e.className.trim(),
-            p = e.parentNode,
-            q = document.createElement("div");
+        let n = e .nodeName .toLowerCase(),
+            c = e .className .trim(),
+            p = e .parentNode,
+            q = document .createElement( "div");
 
-        h = e.textContent.trim();
+        h = e .textContent .trim();
         
         if(
-            (new String(h).startsWith("<")) && (
-                !(new String(h).startsWith("<%")) &&
-                !(new String(h).startsWith("<?"))
+            (new String(h) .startsWith("<")) && (
+                !(new String(h) .startsWith("<%")) &&
+                !(new String(h) .startsWith("<?"))
             )
             
         ){
@@ -25,17 +25,17 @@ function textarea2div(){
         p.removeChild(e);
 
         if(c == ""){
-            q.classList.add("code");
+            q.classList .add("code");
         } else {
             q.className = c;
-            q.classList.add("pre-wrap");
+            q.classList .add( "pre-wrap");
         }
     });
 }
 
 function windowLoad() {
     textarea2div();
-    fnSavePage();
+    /／ fnSavePage();
 }
 
 function fnSavePage (){
