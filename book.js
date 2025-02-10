@@ -42,10 +42,10 @@ function fnSavePage (){
     let saveKey = document.body.getAttribute("data-save-key");
     let stints = document.querySelectorAll("body>*>*");
 
-    let h1 = document.createElement("h1");
-    document.body.appendChild(h1);
-    h1.innerHTML = "クリア";
-    h1.classList.add("clear-save");
+    let h1 = document .createElement("h1");
+    document .body .appendChild(h1);
+    h1 .innerHTML = "クリア";
+    h1 .classList .add( "clear-save");
     h1.style.position = "fixed";
     h1.style.right = 0;
     h1.style.bottom = 0;
