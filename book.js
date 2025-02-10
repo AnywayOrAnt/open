@@ -1,14 +1,12 @@
 function textarea2div(){
     document
     .querySelectorAll( "textarea")
-    .forEach((e, i) =＞ {
-
+    .forEach((e, i) => {
         let n = e .nodeName .toLowerCase(),
             c = e .className .trim(),
             p = e .parentNode,
-            q = document .createElement( "div")，
-
-        h = e .textContent .trim();
+            q = document .createElement( "div"),
+            h = e .textContent .trim();
         
         if(
             (new String(h) .startsWith("<")) && (
@@ -35,7 +33,7 @@ function textarea2div(){
 
 function windowLoad() {
     textarea2div();
-    /／ fnSavePage();
+    // fnSavePage();
 }
 
 function fnSavePage (){
