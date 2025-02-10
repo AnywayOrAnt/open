@@ -1,4 +1,4 @@
-function textarea2div(){
+window.textarea2div = ()=>{
     document
     .querySelectorAll( "textarea")
     .forEach((e, i) => {
@@ -31,12 +31,12 @@ function textarea2div(){
     });
 }
 
-function windowLoad() {
+window.windowLoad = () => {
     textarea2div();
     // fnSavePage();
 }
 
-function fnSavePage (){
+window.fnSavePage = ()=>{
     let saveKey = document.body.getAttribute("data-save-key");
     let stints = document.querySelectorAll("body>*>*");
 
