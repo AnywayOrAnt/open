@@ -1,12 +1,12 @@
 function textarea2div(){
     document
-        .querySelectorAll( "textarea")
-        .forEach(function (e, i) {
+    .querySelectorAll( "textarea")
+    .forEach((e, i) =＞ {
 
         let n = e .nodeName .toLowerCase(),
             c = e .className .trim(),
             p = e .parentNode,
-            q = document .createElement( "div");
+            q = document .createElement( "div")，
 
         h = e .textContent .trim();
         
@@ -20,15 +20,15 @@ function textarea2div(){
             h = "    " + h
         }
 
-        q.textContent = h;
-        p.insertBefore(q, e);
-        p.removeChild(e);
+        q .textContent = h;
+        p .insertBefore( q, e);
+        p .removeChild( e);
 
-        if(c == ""){
-            q.classList .add("code");
+        if( c == ""){
+            q .classList .add( "code");
         } else {
-            q.className = c;
-            q.classList .add( "pre-wrap");
+            q .className = c;
+            q .classList .add( "pre-wrap");
         }
     });
 }
