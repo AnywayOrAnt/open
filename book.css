@@ -379,3 +379,8 @@ div[b]{
 span[b]{
     padding: 0 0.3em;
 }
+
+div.vip{
+    background-color: gold;
+    font-weight: bolder;
+}
